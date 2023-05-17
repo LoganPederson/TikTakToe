@@ -1,0 +1,57 @@
+#gameBoard{
+    width: 186px;
+    height: fit-content;
+    background-color: blueviolet;
+    text-align: center;
+    font-size: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -93px;
+    margin-left: -93px;
+}
+
+.square{
+    margin: 1px;
+    line-height: 50px;
+    font-size: 25px;
+    vertical-align: top;
+}
+.win-line{
+    width: 0px;
+    height: 5px;
+    position: absolute;
+    background-color: tomato;
+    transform:rotate(-45deg);
+    transform-origin:left;
+    animation:grow 1s linear forwards;
+    top: 175px;
+    left: 5px;
+}
+
+.winning-text{
+    font-size: xx-large;
+    font-family:'Verdana, Geneva, Tahoma, sans-serif';
+    color: blueviolet;
+    position: absolute;
+}
+.reset-button{
+    font-size: xx-large;
+    font-family:'Verdana, Geneva, Tahoma, sans-serif';
+    color: blueviolet;
+    position: absolute;
+    top: 300px;
+    right: 9px;
+}
+@keyframes grow {
+    to {
+        width: var(--grow-width);
+        height: var(--grow-height);
+    }
+}
+
+
+:root {
+    --grow-width: 250px;
+    --grow-height: 5px;
+}
