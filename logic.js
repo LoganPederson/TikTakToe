@@ -142,7 +142,7 @@ class Game{
                 this.drawWinLine(winningStraight)
                 this.finished = true;
             }
-            if(this.board.includes(null)){
+            if(this.board.includes(null) && !this.finished){
                 let nullsInArray = 0
                 for(let x=0; x<this.board.length; x++){
                     if (this.board[x] === null){
@@ -192,12 +192,16 @@ class Game{
                 if(this.turn === 'player1'){
                     let tempBoard = [...this.board]
                     tempBoard[nulls[index]] = 'X'
-                    this.evaluateWin(tempBoard, false)
+                    if(this.evaluateWin(tempBoard, false)){
+                        outcomes.push('win')
+                    }
                 }
                 else if(this.turn === 'player2'){
                     let tempBoard = [...this.board]
                     tempBoard[nulls[index]] = 'O'
-                    this.evaluateWin(tempBoard, false)
+                    if(this.evaluateWin(tempBoard, false)){
+                        outcomes.push('win')
+                    }
                 }
             }
         }
